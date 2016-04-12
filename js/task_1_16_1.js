@@ -1,7 +1,3 @@
-function $(id){
-	return document.getElementById(id);
-}
-
 /**
  * aqiData，存储用户输入的空气指数数据
  * 示例格式：
@@ -17,26 +13,15 @@ var aqiData = {};
  * 然后渲染aqi-list列表，增加新增的数据
  */
 function addAqiData() {
-	var city = $('aqi-city-input').value,
-		value = $('aqi-value-input').value;
-	if(city&&value){
-		aqiData[city] = value;
-	}	
+	var city = $('aqi-city-input').value.trim();
+	var 
 }
 
 /**
  * 渲染aqi-table表格
  */
 function renderAqiList() {
-	var table = $('aqi-table');
-	if(typeof aqiData.length !== 'undefined'){
-		table.innerHTML = "<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>";
-		for(var key in aqiData){
-			var str = "<tr><td>"+ key + "</td><td>" + aqiData[key] +"</td><td>取消</td></tr>";
-			table.innerHTML += str;
-		}
-	}
-	
+
 }
 
 /**
@@ -56,16 +41,23 @@ function delBtnHandle() {
   // do sth.
 
   renderAqiList();
+  
 }
 
 function init() {
 
   // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
-  $('add-btn').addEventListener('click', function(){
-  	addBtnHandle();
-  })
+  $('add-btn').addEventListener('click',addBtnHandle);
   // 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
 
 }
 
 init();
+
+function $(id){
+	return document.getElementById(id);
+}()
+
+String.prototype.trim = function(){
+	return this.replace(/^\s*|\s*$/g,"")
+}

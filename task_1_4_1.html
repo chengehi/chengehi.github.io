@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		html,body{width: 100%;height: 100%;}
+
+		.parent{overflow: hidden;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: #ccc;display: inline-block;}
+		.parent .circle{width: 100px;height: 100px;border-radius: 50%;background-color: #fc0;}
+		.parent .circlelt{top:-50px;left: -50px;z-index: -1;}
+		.parent .circlerb{right: -50px;bottom: -50px;z-index: -1;}
+
+		.parent .content{width: 400px;}
+		.parent .content h2{text-align: center;}
+		.parent .content p{text-indent: 2em;line-height: 2em;}
+	</style>
+</head>
+<body>
+	<div class="parent f-pr">
+		<div class="content f-pr">
+			<h2>标题</h3>
+			<p>简介</p>
+			<p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内</p>
+		</div>
+		<span class="f-pa f-db circle circlelt"></span>
+		<span class="f-pa f-db circle circlerb"></span>
+	</div> 
+</body>
+</html>
